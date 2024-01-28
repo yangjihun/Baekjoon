@@ -1,0 +1,6 @@
+N,M = map(int,input().split())
+d1 = input().split()
+d2 = input().split()
+s = set(d1+d2)
+gap = (N+M)-len(s)
+print(N+M-gap*2)
