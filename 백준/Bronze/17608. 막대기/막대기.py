@@ -2,17 +2,13 @@ import sys
 input = sys.stdin.readline
 N = int(input())
 li = []
-
+result = 0
 for _ in range(N):
-  num = int(input())
-  if not li:
-    li.append(num)
-  elif li[-1]>num:
-    li.append(num)
-  else:
-    while li[-1]<=num:
-      li.pop()
-      if not li:
-        break
-    li.append(num)
-print(len(li))
+  li.append(int(input()))
+li = li[::-1]
+key = 0
+for i in li:
+  if i>key:
+    result+=1
+    key = i
+print(result)
