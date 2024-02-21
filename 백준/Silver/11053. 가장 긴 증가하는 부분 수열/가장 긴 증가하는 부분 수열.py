@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 N = int(input())
 li = list(map(int,input().split()))
 A = [1]*N
