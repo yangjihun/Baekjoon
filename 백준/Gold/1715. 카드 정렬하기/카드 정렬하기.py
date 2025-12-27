@@ -1,18 +1,16 @@
-# 1715
-from queue import PriorityQueue
+import sys
+import heapq
+
 N = int(input())
-pq = PriorityQueue()
+input = sys.stdin.readline
+pq = []
+result = 0
 
 for _ in range(N):
-  pq.put(int(input()))
+    heapq.heappush(pq,int(input()))
 
-sum = 0
-
-while pq.qsize()>1:
-  data1 = pq.get()
-  data2 = pq.get()
-  temp = data1 + data2
-  sum+=temp
-  pq.put(temp)
-
-print(sum)
+while len(pq) >= 2:
+    sum = heapq.heappop(pq) + heapq.heappop(pq)
+    result += sum
+    heapq.heappush(pq,sum)
+print(result)
