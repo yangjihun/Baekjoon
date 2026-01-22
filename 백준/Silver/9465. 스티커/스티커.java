@@ -1,15 +1,27 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	
+	static int nextInt() throws Exception {
+		while (st==null || !st.hasMoreTokens()) {
+			String line = br.readLine();
+			if (line==null) return Integer.MIN_VALUE;
+			st = new StringTokenizer(line);
+		}
+		return Integer.parseInt(st.nextToken());
+	}
+	
 	public static void main(String[] args) throws Exception {
-		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt();
+		int T = nextInt();
 		for (int test=0; test<T; test++) {
-			int N = sc.nextInt();
+			int N = nextInt();
 			int[][] arr = new int[2][N+2];
 			for (int i=0; i<2;i++) {
 				for (int j=2; j<=N+1; j++) {
-					arr[i][j] = sc.nextInt();
+					arr[i][j] = nextInt();
 				}
 			}
 			// solution
